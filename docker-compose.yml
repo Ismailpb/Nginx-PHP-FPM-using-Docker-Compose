@@ -1,0 +1,36 @@
+version: "3"
+services:
+  myweb:
+    image: myweb:1
+    container_name: myweb
+    networks:
+      - myweb
+    volumes:
+      - myweb:/root/project
+
+  nginx:
+    image: nginx:alpine
+    container_name: mynginx
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - myweb
+    volumes:
+      - myweb:/var/www/html/
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./www.ismail.host.crt:/etc/nginx/cert.crt
+      - ./www.ismail.host.key:/etc/nginx/cert.key
+  phpfpm:
+    image: php:7.4.20-fpm-alpine3.13
+    container_name: myphp
+    networks:
+      - myweb
+    volumes:
+      - myweb:/var/www/html
+
+volumes:
+  myweb:
+
+networks:
+  myweb:
