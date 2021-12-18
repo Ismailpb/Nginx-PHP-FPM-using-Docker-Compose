@@ -7,6 +7,9 @@ I'm using docker compose to build the structure
 
 
 # Result
+
+Run the docker compose file once the configuration is ready
+
 ```
 # docker-compose up -d
 Creating network "docker-project_netapp" with the default driver
