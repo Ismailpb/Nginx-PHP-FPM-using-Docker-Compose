@@ -16,4 +16,12 @@ Creating network "docker-project_netapp" with the default driver
 Creating nginx      ... done
 Creating php-server ... done
 ]#
+
+]# docker-compose ps
+   Name                 Command               State                                   Ports                                 
+----------------------------------------------------------------------------------------------------------------------------
+nginx        /docker-entrypoint.sh ngin ...   Up      0.0.0.0:443->443/tcp,:::443->443/tcp, 0.0.0.0:80->80/tcp,:::80->80/tcp
+php-server   docker-php-entrypoint php-fpm    Up      9000/tcp                                                              
+project]# 
+
 ```
