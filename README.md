@@ -8,7 +8,7 @@ I'm using docker compose to build the structure
 
 # Result
 
-Run the docker compose file once the configuration is ready
+Run the docker-compose command once the configuration is ready
 
 ```
 # docker-compose up -d
